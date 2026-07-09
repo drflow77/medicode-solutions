@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviso de Privacidad — Medicode Solutions</title>
+  <meta name="description" content="Aviso de privacidad de Medicode Solutions. Conoce cómo protegemos tus datos y nuestra estricta política de cero datos de pacientes.">
+  <link rel="icon" href="anesthtr_icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:     #07090f;
+      --bg2:    #0d1220;
+      --blue1:  #1a6fd4;
+      --blue2:  #2389f5;
+      --blue3:  #5bb0ff;
+      --cyan:   #38d9f5;
+      --white:  #f0f6ff;
+      --muted:  #7a90b0;
+      --border: rgba(56,217,245,0.12);
+      --card:   rgba(13,18,32,0.92);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ── Hex background ── */
+    .hex-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='92'%3E%3Cpolygon points='40,2 72,21 72,58 40,77 8,58 8,21' fill='none' stroke='%2338d9f5' stroke-width='0.8'/%3E%3C/svg%3E");
+      background-size: 80px 92px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(7,9,15,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+    .nav-brand span { color: var(--cyan); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: .82rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .03em;
+      transition: color .2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--cyan);
+      transition: width .25s ease;
+    }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-btn {
+      background: linear-gradient(135deg, var(--blue1), var(--blue2));
+      border: none;
+      color: #fff;
+      padding: .45rem 1.2rem;
+      border-radius: 7px;
+      font-size: .82rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity .2s, transform .15s;
+    }
+    .nav-btn:hover { opacity: .85; transform: translateY(-1px); }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform .25s, opacity .2s;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      top: 67px; left: 0; right: 0;
+      background: rgba(7,9,15,0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem;
+      display: none;
+      flex-direction: column;
+      gap: 1.2rem;
+      z-index: 99;
+    }
+    .mobile-menu a {
+      font-size: .95rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: .02em;
+    }
+    .mobile-menu a:hover { color: var(--cyan); }
+
+    /* ── LAYOUT ── */
+    .container {
+      width: min(840px, 90vw);
+      margin: 4rem auto 6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .page-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(120deg, var(--white), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .highlight-card {
+      background: rgba(16, 185, 129, 0.06);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .highlight-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .highlight-card p {
+      font-size: 0.92rem;
+      color: #e2e8f0;
+    }
+
+    .highlight-card strong {
+      color: #34d399;
+    }
+
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    }
+
+    .section-card h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-card h2 span {
+      color: var(--cyan);
+      font-family: monospace;
+      font-size: 0.95rem;
+    }
+
+    .section-card p, .section-card li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-card li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      background: #04060b;
+      position: relative;
+      z-index: 2;
+    }
+
+    .foot-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .foot-brand span { color: var(--cyan); }
+
+    .foot-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .foot-links a {
+      font-size: .82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .foot-links a:hover { color: var(--cyan); }
+
+    .foot-copy {
+      font-size: .78rem;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu.open { display: flex; }
+      nav { padding: 1.1rem 1.5rem; }
+      .container { width: 92vw; margin-top: 2.5rem; }
+      .section-card { padding: 1.5rem; }
+      footer { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hex-bg"></div>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div role="img" aria-label="Medicode Solutions icon" style="width:44px;height:38px;flex-shrink:0;background:url('logo2.png') left center / auto 38px no-repeat;"></div>
+    <span class="nav-brand">Medicode <span>Solutions</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#productos">Productos</a></li>
+    <li><a href="index.html#nosotros">Nosotros</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:.8rem;">
+    <a class="nav-btn" href="mailto:contacto@medicode-solutions.com">Contacto</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#productos" onclick="closeMobile()">Productos</a>
+  <a href="index.html#nosotros" onclick="closeMobile()">Nosotros</a>
+  <a href="mailto:contacto@medicode-solutions.com" onclick="closeMobile()">Contacto</a>
+</div>
+
+<!-- ── CONTENT ── -->
+<main class="container">
+  <header class="page-header">
+    <h1 class="page-title">Aviso de Privacidad</h1>
+    <p class="page-subtitle">Última actualización: 9 de julio de 2026</p>
+  </header>
+
+  <!-- Destacado de Privacidad -->
+  <div class="highlight-card">
+    <span class="highlight-icon">🔒</span>
+    <p>
+      <strong>Privacidad Clínica Innegociable:</strong> En Medicode Solutions entendemos que la privacidad en el entorno médico es crítica. Por ello, nuestras aplicaciones <strong>no almacenan, transmiten ni comparten información clínica de pacientes</strong>. Todo proceso y cálculo se realiza de manera 100% local en tu propio dispositivo.
+    </p>
+  </div>
+
+  <section class="section-card">
+    <h2><span>01</span> Responsable del Tratamiento</h2>
+    <p>
+      Medicode Solutions, constituida conforme a las leyes mexicanas, es la responsable del tratamiento de los datos personales recopilados a través de nuestro sitio web y aplicaciones móviles o de escritorio. Para cualquier duda, aclaración o solicitud relacionada con este Aviso de Privacidad, puedes contactarnos al correo <strong>contacto@medicode-solutions.com</strong>.
+    </p>
+  </section>
+
+  <section class="section-card">
+    <h2><span>02</span> Cero Datos de Pacientes (Privacidad Clínica)</h2>
+    <p>
+      Nuestras herramientas de apoyo diagnóstico y cálculo clínico (tales como Ropi Calc y simuladores de AnesthTR) están diseñadas para funcionar en el punto de atención médica sin comprometer la confidencialidad de tus pacientes.
+    </p>
+    <ul>
+      <li><strong>Procesamiento local:</strong> Los valores numéricos, dosis y variables clínicas ingresadas se utilizan únicamente para realizar los cálculos en tiempo real y no se guardan en el dispositivo ni se transmiten a servidores externos.</li>
+      <li><strong>Sin datos identificativos:</strong> No solicitamos nombres, fechas de nacimiento, números de expediente ni ningún otro identificador de pacientes.</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2><span>03</span> Datos Personales de Suscriptores y Usuarios</h2>
+    <p>
+      Para el acceso a nuestras plataformas, el registro de cuentas y la gestión de planes premium (en Ropi Calc), recopilamos y procesamos los siguientes datos personales:
+    </p>
+    <ul>
+      <li><strong>Datos de registro:</strong> Correo electrónico y nombre para mostrar (display name) elegidos por ti para verificar tu sesión mediante Supabase Auth.</li>
+      <li><strong>Datos de pago:</strong> Los pagos y la facturación de suscripciones se procesan a través de la pasarela segura <strong>Stripe</strong>. Medicode Solutions no almacena ni tiene acceso a la información completa de tus tarjetas de crédito o débito; únicamente recibimos la confirmación de la validez de tu suscripción y un ID de cliente de Stripe.</li>
+    </ul>
+  </section>
+
+  <section class="section-card">
+    <h2><span>04</span> Finalidad del Tratamiento de los Datos</h2>
+    <p>
+      Utilizamos tus datos personales únicamente para las siguientes finalidades esenciales:
+    </p>
+    <ul>
+      <li>Autenticar tu identidad y darte acceso a las herramientas del ecosistema de Medicode Solutions.</li>
+      <li>Verificar el estado de tu suscripción premium y procesar cargos a través de Stripe.</li>
+      <li>Brindar soporte técnico y responder a reportes de error o sugerencias que nos envíes de forma voluntaria.</li>
+    </ul>
+    <p>
+      <strong>No realizamos venta de datos, marketing intrusivo ni colocamos publicidad de terceros en nuestras plataformas.</strong>
+    </p>
+  </section>
+
+  <section class="section-card">
+    <h2><span>05</span> Derechos ARCO</h2>
+    <p>
+      Como titular de tus datos personales, tienes derecho a solicitar el Acceso, Rectificación, Cancelación u Oposición (Derechos ARCO) respecto al tratamiento de tu información.
+    </p>
+    <p>
+      Para ejercer cualquiera de estos derechos o solicitar la baja total de tu cuenta y borrado de tu correo electrónico del sistema, basta con enviar una solicitud firmada o desde la dirección de correo registrada al correo de soporte: <strong>contacto@medicode-solutions.com</strong>. Procesaremos tu solicitud a la brevedad y en cumplimiento con la legislación aplicable en protección de datos.
+    </p>
+  </section>
+
+  <section class="section-card">
+    <h2><span>06</span> Cambios a este Aviso de Privacidad</h2>
+    <p>
+      Nos reservamos el derecho de realizar modificaciones o actualizaciones a este Aviso de Privacidad en cualquier momento. Las modificaciones entrarán en vigor a partir de su publicación en este sitio web. Te recomendamos revisarlo periódicamente.
+    </p>
+  </section>
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div role="img" aria-label="Medicode Solutions icon" style="width:40px;height:36px;flex-shrink:0;background:url('logo2.png') left center / auto 36px no-repeat;"></div>
+    <span class="foot-brand">Medicode <span>Solutions</span></span>
+  </div>
+  <div class="foot-links">
+    <a href="https://anesthtr.medicode-solutions.com" target="_blank">AnesthTR</a>
+    <a href="https://ropicalc.com" target="_blank">Ropicalc</a>
+    <a href="#">EnarmTR</a>
+    <a href="privacy.html">Aviso de privacidad</a>
+  </div>
+  <span class="foot-copy">© 2026 Medicode Solutions · México</span>
+</footer>
+
+<script>
+  /* Hamburger menu */
+  const btn = document.getElementById('hamburger');
+  const menu = document.getElementById('mobileMenu');
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  });
+  function closeMobile() {
+    btn.classList.remove('open');
+    menu.classList.remove('open');
+  }
+</script>
+
+</body>
+</html>
