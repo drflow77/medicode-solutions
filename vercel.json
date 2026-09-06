@@ -1,6 +1,12 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "medicode-solutions.com" }],
+      "destination": "https://www.medicode-solutions.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "medicode-solutions.com" }],
       "destination": "https://www.medicode-solutions.com/:path*",
