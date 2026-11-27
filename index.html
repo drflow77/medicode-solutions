@@ -451,6 +451,37 @@
     .prod-card.pe:hover::after {
       background: linear-gradient(90deg, transparent, rgba(192,132,252,0.6), transparent);
     }
+    .prod-card.pw:hover {
+      border-color: rgba(255,169,77,0.5);
+      box-shadow: 0 20px 50px rgba(255,169,77,0.08);
+    }
+    .prod-card.pw:hover::after {
+      background: linear-gradient(90deg, transparent, rgba(255,169,77,0.6), transparent);
+    }
+
+    .also-label {
+      margin: 2.4rem 0 1rem;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .prod-wide {
+      flex-direction: row;
+      align-items: center;
+      gap: 1.6rem;
+    }
+    .prod-wide .prod-logo { width: 72px; height: 72px; border-radius: 16px; flex-shrink: 0; }
+    .prod-wide .prod-body { flex: 1; min-width: 0; }
+    .prod-wide .prod-desc { margin-bottom: .9rem; }
+    .prod-wide .prod-tags { margin-bottom: 0; }
+    .prod-wide .prod-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
 
     .prod-header {
       display: flex;
@@ -689,6 +720,8 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .products-grid { grid-template-columns: 1fr; }
+      .prod-wide { flex-direction: column; align-items: flex-start; }
+      .prod-wide .prod-side { flex-direction: row-reverse; align-items: center; justify-content: space-between; width: 100%; }
       .why-grid      { grid-template-columns: 1fr; }
       .stats-bar     { grid-template-columns: repeat(2, 1fr); }
       nav            { padding: 1rem 1.2rem; }
@@ -866,6 +899,40 @@
     </div>
 
   </div>
+
+  <div class="also-label reveal">También de Medicode</div>
+
+  <!-- RAP Oración -->
+  <div class="prod-card pw prod-wide reveal">
+    <img class="prod-logo" src="https://play-lh.googleusercontent.com/w5r_HbPDSVgb7RYYaYow9cJVvpw9nEqhrWfFgCurAz1-1Twj56Vqbkf8yhHHrH8nJqwq81FWUEdyM2al9OklzA=s144-rw" alt="RAP Oración logo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+    <div class="prod-logo-fallback" style="width:72px; height:72px; border-radius:16px; flex-shrink:0; background: linear-gradient(135deg,#0f1a3a,#1c2c5e);">
+      <svg width="30" height="30" viewBox="0 0 26 26" fill="none">
+        <path d="M13 4c2.5 3.2 5 5.6 5 9.5a5 5 0 0 1-10 0c0-2 1-3.5 2-4.5.3 1.6 1.2 2.5 2 2.5 0-2.8.3-5 1-7.5z" fill="#ffa94d"/>
+      </svg>
+    </div>
+    <div class="prod-body">
+      <div class="prod-name">RAP Oración</div>
+      <div class="prod-cat" style="color:#ffa94d;">Devocional y diario de oración</div>
+      <p class="prod-desc">
+        Devocional diario y diario de oración en tres pasos: Relación con Dios, Amor al prójimo
+        y Petición personal. Incluye la Biblia Reina-Valera 1909 sin conexión, plan de lectura
+        mensual y recordatorio diario.
+      </p>
+      <div class="prod-tags">
+        <span class="tag">Android</span>
+        <span class="tag">Biblia offline</span>
+        <span class="tag">Sin anuncios</span>
+        <span class="tag">Sin cuenta</span>
+      </div>
+    </div>
+    <div class="prod-side">
+      <span class="badge badge-live">Activo</span>
+      <a class="prod-link" href="https://play.google.com/store/apps/details?id=app.rap.oracion" target="_blank" rel="noopener" style="color:#ffa94d;">
+        Ver en Google Play <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- ── WHY ── -->
@@ -927,6 +994,7 @@
     <a href="https://anesthtr.medicode-solutions.com" target="_blank">AnesthTR</a>
     <a href="https://ropicalc.com" target="_blank">Ropicalc</a>
     <a href="#">EnarmTR</a>
+    <a href="https://play.google.com/store/apps/details?id=app.rap.oracion" target="_blank" rel="noopener">RAP Oración</a>
     <a href="privacy.html">Aviso de privacidad</a>
   </div>
   <span class="foot-copy">© 2026 Medicode Solutions · México</span>
